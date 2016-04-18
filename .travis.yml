@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+- '5'
+- '4'
+- '0.12'
+- '0.10'
+deploy:
+  provider: npm
+  email: alec@wenzowski.com
+  api_key:
+    secure: FOaZ6Xjzab1q1IpBfkmxLv6V5GgthlvmyERIapR4nrqXTL2XZ7FvHSmxaIQgKJyNx+YzCWgDCQZj++ALkoLIwFBNhyNg7XdC8wVXJsKnMzXMdP/MbaqFto9dM8rwk6G6nxQVMwkFsS8V9bq4qjjOrEyXEthahWwsR+Hr6TTKb8C0BNgRqIfe1EY4ny2JrA5fx4L/MniL7DmhjAXyrGVXkUCPos4VJOPnX/BqLzcmK8Qu8Ntrrpc9wYianL4hL5A6dc5Bvci8NeWtm9nHI653pnivoFzwOr7TAIvtGbsn9juwEOb3E1La3Ass5CGqILmr1kcAIsr7XpV+rolzb1Dfuyfl+ZV+kuwveTeSLWJjBBmlAh46HfUyi5krp3Qil05LXWNkXIE7npRN5Pe1UUnv3fe2pOYG4JJ5QOm8q33nARpCl4/w/tYKP8/j+DBfWgXRHSFwAzo7tUpil+Fhf02PqnwuDb3ybFFP9WW1JxaXZ2Zw929ZEHxBtkDXNPut61WkK4YQdZN6g9bKPYeFHhb+oraq6zRAwlzd4UnuNaAuIM4bSCtPcTA1MkWBnZHvWcsQyNIGZqIlcCc+Plhy6Qzc646EnuZRYzMBoyAar7nvSgqV13VyytXRXULGfd11V4ILrM2B1UA4YzzrR3GV/CA+nM32o7DBNSsaeenyoPwf4qw=
+  on:
+    tags: true
+    repo: wenzowski/eslint-config-xo-meatier
