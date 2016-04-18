@@ -11,6 +11,7 @@ module.exports = {
     '__PRODUCTION__': true
   },
   rules: {
+    'react/jsx-closing-bracket-location': [0, 0],
     curly: [2, 'multi-line']
   }
 };
