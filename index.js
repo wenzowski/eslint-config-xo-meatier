@@ -11,6 +11,7 @@ module.exports = {
     '__PRODUCTION__': true
   },
   rules: {
+    'import-order/import-order': 0,
     'xo/filename-case': 0,
     'react/jsx-closing-bracket-location': 0,
     curly: [2, 'multi-line']

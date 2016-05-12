@@ -2,8 +2,9 @@ import test from 'ava';
 import eslint from 'eslint';
 import isPlainObj from 'is-plain-obj';
 import tempWrite from 'temp-write';
+const conf = require('../');
 
-const fixture = `
+const mainFixture = `
 'use strict';
 const x = true;
 
@@ -21,8 +22,34 @@ function runEslint(str, conf) {
 }
 
 test('main', t => {
-  const conf = require('../');
   t.true(isPlainObj(conf));
   t.true(isPlainObj(conf.rules));
-  t.is(runEslint(fixture, conf).length, 0);
+  t.is(runEslint(mainFixture, conf).length, 0);
+});
+
+const badImportFixture = `
+import config from '../';
+import path from 'path';
+
+if (config !== path) {
+  console.log('are we surprised?');
+}
+`;
+
+// Should fail import/order rule from eslint-plugin-import
+test.skip('bad import order', t => {
+  t.is(runEslint(badImportFixture, conf).length, 0);
+});
+
+const goodImportFixture = `
+import path from 'path';
+import config from '../';
+
+if (config !== path) {
+  console.log('are we surprised?');
+}
+`;
+
+test('good import order', t => {
+  t.is(runEslint(goodImportFixture, conf).length, 0);
 });
